@@ -1,0 +1,10 @@
+C:\Users\Lin\Documents\FInal_Exp\Generate_QRCode\Generate_QRCode\bin\Debug\Generate_QRCode.exe.config
+C:\Users\Lin\Documents\FInal_Exp\Generate_QRCode\Generate_QRCode\bin\Debug\Generate_QRCode.exe
+C:\Users\Lin\Documents\FInal_Exp\Generate_QRCode\Generate_QRCode\bin\Debug\Generate_QRCode.pdb
+C:\Users\Lin\Documents\FInal_Exp\Generate_QRCode\Generate_QRCode\obj\Debug\Generate_QRCode.csprojResolveAssemblyReference.cache
+C:\Users\Lin\Documents\FInal_Exp\Generate_QRCode\Generate_QRCode\obj\Debug\Generate_QRCode.Form1.resources
+C:\Users\Lin\Documents\FInal_Exp\Generate_QRCode\Generate_QRCode\obj\Debug\Generate_QRCode.Properties.Resources.resources
+C:\Users\Lin\Documents\FInal_Exp\Generate_QRCode\Generate_QRCode\obj\Debug\Generate_QRCode.csproj.GenerateResource.Cache
+C:\Users\Lin\Documents\FInal_Exp\Generate_QRCode\Generate_QRCode\obj\Debug\Generate_QRCode.exe
+C:\Users\Lin\Documents\FInal_Exp\Generate_QRCode\Generate_QRCode\obj\Debug\Generate_QRCode.pdb
+C:\Users\Lin\Documents\FInal_Exp\Generate_QRCode\Generate_QRCode\bin\Debug\zxing.dll
