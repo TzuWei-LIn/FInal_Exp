@@ -37,3 +37,11 @@ for i=1:size(x,3)
         Secert_Diff_2(i) = S2(i) - S2(i-1);
     end
 end
+
+% out put int to txt
+f1 = fopen('C:\Users\WennLab\Documents\FInal_Exp\Secert_1.txt','w');
+f2 = fopen('C:\Users\WennLab\Documents\FInal_Exp\Secert_2.txt','w');
+for i=1:size(Secert_Diff_1,1)
+    fprintf(f1,'%d ',Secert_Diff_1);
+    fprintf(f2,'%d ',Secert_Diff_2);
+end
