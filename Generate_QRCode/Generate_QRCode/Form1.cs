@@ -28,7 +28,7 @@ namespace Generate_QRCode
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
-            StreamReader sr = new StreamReader(@"C:\Users\Lin\Documents\FInal_Exp\Secert_1.txt");
+            StreamReader sr = new StreamReader(@"C:\Users\Lin\Documents\FInal_Exp\Secert_1_1.txt");
             StringBuilder sb = new StringBuilder();
             while (!sr.EndOfStream)
                 sb.Append(sr.ReadLine());
@@ -42,14 +42,36 @@ namespace Generate_QRCode
                 Options = new QrCodeEncodingOptions //設定大小
                 {
                     ErrorCorrection = ZXing.QrCode.Internal.ErrorCorrectionLevel.L,
-                    Height = 500,
-                    Width = 500,
+                    Height = 300,
+                    Width = 300,
                 }
             };
             Bitmap aa = writer.Write(sb.ToString());
             aa.Save(@"C:\Users\Lin\Documents\FInal_Exp\Secert_1.jpg");
             pictureBox1.Image = aa; //轉QRcode的文字 
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ZXing.IBarcodeReader reader = new ZXing.BarcodeReader();
+            //FileStream fs = new FileStream(@"C:\Users\Lin\Desktop\QRCODE\New\1024-M.jpg", FileMode.Open);
+            FileStream fs = new FileStream(@"C:\Users\Lin\Documents\FInal_Exp\Secert_1.jpg", FileMode.Open);
+            Byte[] data = new byte[fs.Length];
+            fs.Read(data, 0, data.Length);
+            fs.Close();
+            MemoryStream ms = new MemoryStream(data);
+            Bitmap b = (Bitmap)Image.FromStream(ms);
+            ZXing.Result rr = reader.Decode(b);
+            if (rr != null) 
+                textBox1.Text = rr.Text;
+            else 
+                MessageBox.Show("Fail");
         }
     }
 }
