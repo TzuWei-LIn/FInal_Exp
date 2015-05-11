@@ -1,3 +1,4 @@
+clear();
 rd = importdata('Secert_Rand.mat');
 I = imread('Lena.jpg');
 
@@ -46,3 +47,5 @@ for i=1:size(Secert_Diff_1,1)
     fprintf(f1,'%d ',Secert_Diff_1);
     fprintf(f2,'%d ',Secert_Diff_2);
 end
+fclose(f1);
+fclose(f2);
