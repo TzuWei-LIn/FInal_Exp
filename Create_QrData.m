@@ -1,3 +1,4 @@
+%產生qr code 依序 產生區塊S1 和 S2
 clear();
 rd = importdata('Secert_Rand.mat');
 I = imread('Lena.jpg');
@@ -15,7 +16,7 @@ end
 for g=1:count-1
     for i=1:8
         for j=1:8
-            x1 = dec2bin(x(:,:,g))-48;
+            x1 = dec2bin(x(i,j,g))-48;
             if(x1(length(x1))==1)
                 x(i,j,g) = x(i,j,g)-1;
             end

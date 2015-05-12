@@ -28,7 +28,7 @@ namespace Generate_QRCode
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
-            StreamReader sr = new StreamReader(@"C:\Users\Lin\Documents\FInal_Exp\Secert_1_1.txt");
+            StreamReader sr = new StreamReader(@"C:\Users\Lin\Documents\FInal_Exp\1.txt");
             StringBuilder sb = new StringBuilder();
             while (!sr.EndOfStream)
                 sb.Append(sr.ReadLine());
@@ -68,15 +68,15 @@ namespace Generate_QRCode
             MemoryStream ms = new MemoryStream(data);
             Bitmap b = (Bitmap)Image.FromStream(ms);
             ZXing.Result rr = reader.Decode(b);
-            if (rr != null) 
+            if (rr != null)
                 textBox1.Text = rr.Text;
-            else 
+            else
                 MessageBox.Show("Fail");
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            StreamReader sr = new StreamReader(@"C:\Users\Lin\Documents\FInal_Exp\Secert_2_2.txt");
+            StreamReader sr = new StreamReader(@"C:\Users\Lin\Documents\FInal_Exp\2.txt");
             StringBuilder sb = new StringBuilder();
             while (!sr.EndOfStream)
                 sb.Append(sr.ReadLine());
@@ -116,6 +116,50 @@ namespace Generate_QRCode
             ZXing.Result rr = reader.Decode(b);
             if (rr != null)
                 textBox1.Text = rr.Text;
+            else
+                MessageBox.Show("Fail");
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ZXing.IBarcodeReader reader = new ZXing.BarcodeReader();
+            FileStream fs = new FileStream(@"C:\Users\Lin\Documents\FInal_Exp\ex1.bmp", FileMode.Open);
+            //FileStream fs = new FileStream(@"C:\Users\Lin\Documents\FInal_Exp\Secert_2.jpg", FileMode.Open);
+            Byte[] data = new byte[fs.Length];
+            fs.Read(data, 0, data.Length);
+            fs.Close();
+            MemoryStream ms = new MemoryStream(data);
+            Bitmap b = (Bitmap)Image.FromStream(ms);
+            ZXing.Result rr = reader.Decode(b);
+            if (rr != null)
+            {
+                textBox1.Text = rr.Text;
+                StreamWriter sw = new StreamWriter(@"C:\Users\Lin\Documents\FInal_Exp\s1.txt");
+                sw.WriteLine(rr.Text);            // 寫入文字
+                sw.Close();
+            }
+            else
+                MessageBox.Show("Fail");
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            ZXing.IBarcodeReader reader = new ZXing.BarcodeReader();
+            FileStream fs = new FileStream(@"C:\Users\Lin\Documents\FInal_Exp\ex2.bmp", FileMode.Open);
+            //FileStream fs = new FileStream(@"C:\Users\Lin\Documents\FInal_Exp\Secert_2.jpg", FileMode.Open);
+            Byte[] data = new byte[fs.Length];
+            fs.Read(data, 0, data.Length);
+            fs.Close();
+            MemoryStream ms = new MemoryStream(data);
+            Bitmap b = (Bitmap)Image.FromStream(ms);
+            ZXing.Result rr = reader.Decode(b);
+            if (rr != null)
+            {
+                textBox1.Text = rr.Text;
+                StreamWriter sw = new StreamWriter(@"C:\Users\Lin\Documents\FInal_Exp\s2.txt");
+                sw.WriteLine(rr.Text);            // 寫入文字
+                sw.Close();
+            }
             else
                 MessageBox.Show("Fail");
         }
