@@ -1,7 +1,8 @@
 clear();
 rd = importdata('Secert_Rand.mat');
 
-I = imread('Lena.jpg');
+% I = imread('Lena.jpg');
+I = imread('Sailboat.bmp');
 Img_H = I;
 Img_qr1 = rgb2gray(imread('Secert_1.jpg'));
 Img_qr2 = rgb2gray(imread('Secert_2.jpg'));

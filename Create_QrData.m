@@ -1,7 +1,8 @@
 %產生qr code 依序 產生區塊S1 和 S2
 clear();
 rd = importdata('Secert_Rand.mat');
-I = imread('Lena.jpg');
+% I = imread('Lena.jpg');
+I = imread('Sailboat.bmp');
 
 % Devide block into martix x
 count =1;
